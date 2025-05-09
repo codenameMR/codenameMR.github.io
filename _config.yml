@@ -6,34 +6,34 @@ favicon: images/favicon.ico
 version: 2
 
 # Personal info
-name: Brett Harris
-title: Senior Network System Administrator
-email: brett.h@email.co.uk
-website: www.github.com/sproogen/resume-theme
+name: 김보람
+title: 웹 백엔드 개발자
+email: tldgkgud00@gmail.com
+website: www.github.com/codenameMR
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
-twitter_username: facespics
-github_username:  sproogen
+# twitter_username: facespics
+github_username:  codenameMR
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
-instagram_username: jameswgrant
-linkedin_username: jameswgrant
+# instagram_username: jameswgrant
+# linkedin_username: jameswgrant
 # xing_username: jekyll
 # pinterest_username: jekyll
-youtube_username: globalmtb
+# youtube_username: globalmtb
 # googleplus_username: +jekyll
 # orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
-additional_links:
-- title: itsgoingto.be
-  icon: fas fa-globe
-  url: https://www.itsgoingto.be
+# additional_links:
+# - title: itsgoingto.be
+#  icon: fas fa-globe
+#  url: https://www.itsgoingto.be
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
 #   url: Link url (eg. https://google.com)
@@ -48,69 +48,93 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's Brett and I'm a senior network system administrator. As well as administrating systems I also have experience making software and web apps. I have worked at a number of companies gaining teamwork and leadership skills.
-
-  I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
+  웹 백엔드 개발자로서 JSP 기반 시스템 운영 경험과 Spring Boot 기반의 커뮤니티 서비스 개발 경험을 가지고 있습니다.<br>
+  특히, 기상청 시스템 개발 과정에서 복잡한 SQL 쿼리를 CTE로 구조화하고 튜닝해 <mark>성능을 개선</mark>했으며, 비정형 날짜 처리 문제를 자바 모듈로 해결하며 데이터 유연성도 높였습니다.
+  최신 기술 습득을 위해 GIS 기반 커뮤니티 프로젝트(Fish-Go)를 진행했고, 실 서비스를 목표로 실용적인 기능들을 구현했습니다.<br>
+  항상 <mark>사용자의 관점</mark>과 협업을 고려하며, <mark>문제 해결과 성장</mark>을 함께 추구하는 개발자가 되고자 합니다.
 
 content:
+  - title: Skill
+    layout: list
+    content: # this will include new lines to allow paragraphs
+      - layout: left
+        title: Backend
+        description: |
+          - Java
+          - Spring Boot, Spring MVC, Spring Security, Spring Data JPA
+          - IntelliJ, Eclipse
+      - layout: left
+        title: DevOps
+        description: |
+          - PostgreSQL, Cubrid
+      - layout: left
+        title: Frontend
+        description: |
+          - JS
+          - JQuery
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: top-middle
-        title: Super awesome project
-        link: github.com/sproogen
-        # link_text: Project Website
-        additional_links:
-          - title:  sproogen/modern-resume-theme
-            icon: fab fa-github
-            url: github.com/sproogen/modern-resume-theme
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+      - layout: left
+        title: Fish-Go
+        caption: 2025.02 ~
+        link: github.com/codenameMR/Fish-Go
+          # link_text: Project Website
+          # additional_links:
+          #  - title:  sproogen/modern-resume-theme
           #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+          #  url: github.com/sproogen/modern-resume-theme
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+        #   icon: fab fa-github
+        #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         quote: >
-          This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+          GIS 기반 낚시 커뮤니티 웹서비스
         description: | # this will include new lines to allow paragraphs
-          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
+          - 역할: 백엔드 전담
+          - 목표: 낚시 포인트·조황 정보를 지도 기반으로 공유할 수 있는 커뮤니티 구축
+          - 성과:
+            - 어종 태그 기반 검색 기능 구현 (인덱스 고려한 DB 설계)
+            - DTO 최적화 및 Fetch Join으로 N+1 문제 해결
+          - 사용 기술: Java 21, Spring Boot, JPA, PostgreSQL, Gradle, Swagger
+          - 기타: GitHub / 서비스 배포 예정
 
+      - layout: left
+        title: 수문기상 기상가뭄 <br> 시스템
+        caption: 2023.08 ~ 2024.12
+        link: https://hydro.kma.go.kr
+        quote: >
+          기상청 내부 연구용 통합 기상 분석 페이지
+        description: | # this will include new lines to allow paragraphs
+          - 개선사업 및 유지보수 개발, 배포, 운영, 기능 개선 및 성능 최적화
+          - 300줄 이상 복잡 SQL → CTE 도입 및 인덱스 튜닝으로 가독성/성능 개선 <mark>10s → 2s</mark>
+          - 날짜 컬럼이 varchar로 혼재(yyyymmdd, yyyymmddttmm 등) → 자바 모듈 작성으로 <mark>자동 변환 처리</mark>
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: The Boring Company
-        link: boringcompany.com
+        title: 엔지스(주)
+        # link: boringcompany.com
         # link_text: boringcompany.com
-        sub_title: Senior Network System Administrator
-        caption: November 2017 - Present
+        sub_title: 웹 개발자
+        caption: 2023.07 ~ 2024.12
         quote: >
-          Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+          기상청, 해양수산부 등 국가기관의 GIS 관련 SI 기업
         description: | # this will include new lines to allow paragraphs
-            Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.
-
+          - 기상청의 수문기상 기상가뭄 프로젝트 개발/배포/운영 경험
+          - 전자정부 프레임워크, MyBatis, Cubrid 환경에서의 개발 경험
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Harvard University
-        caption: 2010 - 2013
-        sub_title: BSc Computer Science
+        title: 중앙정보기술인재개발원
+        caption: 2022.12 ~ 2023.05
+        # sub_title:
         quote: >
-          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+          프로젝트 기반 Java & Spring 웹 개발 교육
         description: | # this will include new lines to allow paragraphs
-          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
-
-          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
-
-  - title: A Little More About Me
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - Rock climbing
-      - Gaming
-      - Knitting
-      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
-
-      Look at this cool image  
-      ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
+          - 웹 개발에 흥미를 느껴 개발자로서 기여하고 싶다는 생각에 시작
+          - HTML/CSS/JS/JAVA/SQL 등 웹 개발에 필요한 기본 교육 진행
+          - 5번의 프로젝트 중 4번 동안 <mark>팀장</mark> 역할 수행
 
 # Footer
 footer_show_references: true
