@@ -54,24 +54,6 @@ about_content: | # this will include new lines to allow paragraphs
   항상 <mark>사용자의 관점</mark>과 협업을 고려하며, <mark>문제 해결과 성장</mark>을 함께 추구하는 개발자가 되고자 합니다.
 
 content:
-  - title: Skill
-    layout: list
-    content: # this will include new lines to allow paragraphs
-      - layout: left
-        title: Backend
-        description: |
-          - Java
-          - Spring Boot, Spring MVC, Spring Security, Spring Data JPA
-          - IntelliJ, Eclipse
-      - layout: left
-        title: DevOps
-        description: |
-          - PostgreSQL, Cubrid
-      - layout: left
-        title: Frontend
-        description: |
-          - JS
-          - JQuery
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -135,7 +117,24 @@ content:
           - 웹 개발에 흥미를 느껴 개발자로서 기여하고 싶다는 생각에 시작
           - HTML/CSS/JS/JAVA/SQL 등 웹 개발에 필요한 기본 교육 진행
           - 5번의 프로젝트 중 4번 동안 <mark>팀장</mark> 역할 수행
-
+  - title: Skill
+    layout: list
+    content: # this will include new lines to allow paragraphs
+      - layout: left
+        title: Backend
+        description: |
+          - Java
+          - Spring Boot, Spring MVC, Spring Security, Spring Data JPA
+          - IntelliJ, Eclipse
+      - layout: left
+        title: DevOps
+        description: |
+          - PostgreSQL, Cubrid
+      - layout: left
+        title: Frontend
+        description: |
+          - JS
+          - JQuery
 # Footer
 footer_show_references: true
 # references_title: References on request (Override references text)
