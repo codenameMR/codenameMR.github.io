@@ -48,7 +48,7 @@ github_username:  codenameMR
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  웹 백엔드 개발자로서 JSP 기반 시스템 운영 경험과 Spring Boot 기반의 커뮤니티 서비스 개발 경험을 가지고 있습니다.<br>
+  <mark>1년차</mark> 웹 백엔드 개발자로서 JSP 기반 시스템 운영 경험과 Spring Boot 기반의 커뮤니티 서비스 개발 경험을 가지고 있습니다.<br>
   특히, 기상청 시스템 개발 과정에서 복잡한 SQL 쿼리를 CTE로 구조화하고 튜닝해 <mark>성능을 개선</mark>했으며, 비정형 날짜 처리 문제를 자바 모듈로 해결하며 데이터 유연성도 높였습니다.
   최신 기술 습득을 위해 GIS 기반 커뮤니티 프로젝트(Fish-Go)를 진행했고, 실 서비스를 목표로 실용적인 기능들을 구현했습니다.<br>
   항상 <mark>사용자의 관점</mark>과 협업을 고려하며, <mark>문제 해결과 성장</mark>을 함께 추구하는 개발자가 되고자 합니다.
@@ -72,7 +72,7 @@ content:
         quote: >
           GIS 기반 낚시 커뮤니티 웹서비스
         description: | # this will include new lines to allow paragraphs
-          - 역할: 백엔드 전담
+          - 역할: 회원가입, 로그인, 게시글, 댓글, 마이페이지
           - 목표: 낚시 포인트·조황 정보를 지도 기반으로 공유할 수 있는 커뮤니티 구축
           - 성과:
             - 어종 태그 기반 검색 기능 구현 (인덱스 고려한 DB 설계)
