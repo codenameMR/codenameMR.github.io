@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Do You Be My Valentine?</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #533B4D;
+      --pink: #F564A9;
+      --beige: #FAE3C6;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Gaegu', cursive;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: var(--beige);
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100svh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 12px;
+      padding: 16px;
+
+      text-align: center;
+      color: var(--dark);
+
+      justify-content: center;
+    }
+
+    .top {
+      margin-top: 8px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin: 0;
+    }
+
+    .middle {
+      flex: 0 1 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .middle img {
+      width: 88vw;
+      max-width: 420px;
+      height: auto;
+    }
+
+    .bottom {
+      margin-bottom: 12px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      font-size: 1.8rem;
+      padding: 14px 36px;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      touch-action: manipulation;
+    }
+
+    #yesBtn {
+      background: var(--pink);
+      color: white;
+    }
+
+    #noBtn {
+      background: var(--dark);
+      color: white;
+    }
+
+    .result {
+      font-size: clamp(2.6rem, 8vw, 3.8rem);
+      font-weight: bold;
+    }
+
+    /* 💓 하트 폭죽 */
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      animation: pop 1.5s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0) translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.6) translateY(-160px);
+        opacity: 0;
+      }
+    }
+
+    /* 작은 화면 보정 */
+    @media (max-height: 700px) {
+      .container {
+        gap: 6px;
+      }
+
+      .middle img {
+        width: 92vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="top">
+      <h1 id="title">내 발렌타인이 되어 줄래? 💖</h1>
+    </div>
+
+    <div class="middle">
+      <img src="./valentine_1.png" alt="cute character">
+    </div>
+
+    <div class="bottom">
+      <div class="buttons">
+        <button id="yesBtn">응!</button>
+        <button id="noBtn">아니;;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎵 효과음 -->
+  <audio id="successSound" preload="auto">
+    <source src="success.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const noMessages = [
+      "그럴거야?",
+      "진짜로?",
+      "장난이지?",
+      "농담하지마",
+      "나 진지해",
+      "어허"
+    ];
+
+    let noCount = 0;
+    let yesScale = 1;
+
+    const title = document.getElementById("title");
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const container = document.getElementById("container");
+    const sound = document.getElementById("successSound");
+
+    function createHeart(x, y) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "💓";
+      heart.style.left = x + "px";
+      heart.style.top = y + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 1500);
+    }
+
+    yesBtn.addEventListener("click", () => {
+      sound.currentTime = 0;
+      sound.play();
+
+      container.innerHTML = `<div class="result">진짜? 앗싸!!!!!! 💕</div>`
+		           + '<div><img src="valentine_2.png" /></div>';
+
+      for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+          createHeart(
+            Math.random() * window.innerWidth,
+            window.innerHeight * 0.75
+          );
+        }, i * 40);
+      }
+    });
+
+    noBtn.addEventListener("click", () => {
+      title.textContent = noMessages[noCount];
+      noCount++;
+
+      yesScale += 0.45;
+      yesBtn.style.transform = `scale(${yesScale})`;
+
+      if (noCount >= noMessages.length) {
+        noBtn.style.transform = "scale(0)";
+        noBtn.style.opacity = "0";
+      }
+    });
+  </script>
+</body>
+</html>
