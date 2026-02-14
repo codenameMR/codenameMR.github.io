@@ -66,7 +66,7 @@
 
     .middle img {
       width: 88vw;
-      max-width: 420px;
+      max-width: 800px;
       height: auto;
     }
 
@@ -76,13 +76,13 @@
 
     .buttons {
       display: flex;
-      gap: 20px;
+      gap: 30px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     button {
-      font-size: 1.8rem;
+      font-size: 3.8rem;
       padding: 14px 36px;
       border-radius: 16px;
       border: none;
@@ -168,7 +168,13 @@
       "장난이지?",
       "농담하지마",
       "나 진지해",
-      "어허"
+      "어허",
+      "이럴수가",
+      "너무해",
+      "ㅠㅠ",
+      "ㅠㅠㅠ",
+      "ㅠㅠㅠㅠ",
+      "ㅠㅠㅠㅠㅠ",
     ];
 
     let noCount = 0;
@@ -214,9 +220,13 @@
 
       yesScale += 0.45;
       yesBtn.style.transform = `scale(${yesScale})`;
+      
+      // no 버튼을 옆으로 밀려나게 함
+      const pushAmount = (yesScale - 1) * 50;
+      noBtn.style.transform = `translateX(${pushAmount}px)`;
 
       if (noCount >= noMessages.length) {
-        noBtn.style.transform = "scale(0)";
+        noBtn.style.transform = `translateX(${pushAmount}px) scale(0)`;
         noBtn.style.opacity = "0";
       }
     });
