@@ -53,7 +53,7 @@
     }
 
     h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
+      font-size: clamp(4rem, 6vw, 3rem);
       margin: 0;
     }
 
@@ -94,6 +94,7 @@
     #yesBtn {
       background: var(--pink);
       color: white;
+      z-index: 1;
     }
 
     #noBtn {
@@ -174,7 +175,7 @@
       "ㅠㅠ",
       "ㅠㅠㅠ",
       "ㅠㅠㅠㅠ",
-      "ㅠㅠㅠㅠㅠ",
+      "ㅠㅠㅠㅠㅠ"
     ];
 
     let noCount = 0;
@@ -215,15 +216,18 @@
     });
 
     noBtn.addEventListener("click", () => {
-      title.textContent = noMessages[noCount];
+      noBtn.textContent = noMessages[noCount];
       noCount++;
 
-      yesScale += 0.45;
+      yesScale += 0.55;
       yesBtn.style.transform = `scale(${yesScale})`;
       
       // no 버튼을 옆으로 밀려나게 함
-      const pushAmount = (yesScale - 1) * 50;
-      noBtn.style.transform = `translateX(${pushAmount}px)`;
+      if(noCount < noMessages.length - 3) {
+        const pushAmount = (yesScale - 1) * 50;
+        noBtn.style.transform = `translateX(${pushAmount}px)`;
+
+      }
 
       if (noCount >= noMessages.length) {
         noBtn.style.transform = `translateX(${pushAmount}px) scale(0)`;
